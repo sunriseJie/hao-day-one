@@ -1,0 +1,13 @@
+<!--pages/view/photo_view.wxml-->
+
+    <view class="viewDiaryPhotos" wx:if="{{diaryPhotos}}">
+      <swiper indicator-dots="true" current="{{diaryPhotos.current}}" 
+      circular="false" indicator-color="#fffdf5" 
+      indicator-active-color="#d70b17">
+        <block wx:for="{{diaryPhotos.data}}" wx:for-item = "photo" wx:key="{{diaryPhotos.tripName}}">
+          <swiper-item>
+            <image src="{{photo}}" mode="aspectFit"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>

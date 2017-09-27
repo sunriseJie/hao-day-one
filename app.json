@@ -1,0 +1,14 @@
+{
+  "pages": [    
+    "pages/home/home",
+    "pages/edit/index",
+    "pages/view/photo_view",
+    "pages/local/home"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0f1324",
+    "navigationBarTitleText": "卢梓灏周岁成长记录",
+    "navigationBarTextStyle": "white"
+  }
+}

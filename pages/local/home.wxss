@@ -1,0 +1,39 @@
+/* pages/local/home.wxss */
+@import '../../components/trip/trip.wxss';
+@import '../../components/trip/trip_detail.wxss';
+.invite_img{
+  width: 750rpx;
+  height: 1334rpx;
+}
+.home {
+  background-color: #0f1324;
+}
+
+.m-trip {
+  margin: 20rpx;
+}
+
+.m-trip .detail{
+  font-size: 25rpx;
+}
+
+.viewDiaryPhotos{
+  z-index: 99;
+  height: 1334rpx;
+  background-color: #0f1324;
+}
+.viewDiaryPhotos swiper {
+  width: 100%;
+  height: 1200rpx;
+}
+.viewDiaryPhotos image{
+  width: 100%;
+  height: 1100rpx;
+}
+.video{
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 50%;
+  
+}

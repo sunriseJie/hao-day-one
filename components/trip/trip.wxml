@@ -1,0 +1,20 @@
+<template name="m-trip">
+  <view class="m-trip" bindtap="viewDiary" data-id="{{ trip.id }}" data-name="{{ trip.name }}" >
+    <image class="cover" src="{{ trip.cover_image_w640 }}" mode="aspectFill"></image>
+    <view class="info">
+      <text class="h2">{{ trip.name }}</text>
+      <view class="detail">
+        <view>
+          <text>{{trip.content}}</text>
+        </view>
+
+      </view>
+      <view class="user" wx:if="{{ mode === 1 }}">
+        <image class="avatar" src="/images/month_{{ trip.month }}.png"></image>
+        <view class="name">Month</view>
+      </view>
+
+    </view>
+  </view>
+
+</template>

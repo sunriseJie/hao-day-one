@@ -1,0 +1,18 @@
+<!--pages/local/home.wxml-->
+<!--template m-trip  -->
+<import src="../../components/trip/trip.wxml" />
+<!-- template m-trip-detail -->
+<import src="../../components/trip/trip_detail.wxml" />
+
+
+
+<view class="home">
+
+
+  <view class="invite">
+    <image class="invite_img" src="/images/bg.png"></image>
+  </view>
+
+
+
+</view>

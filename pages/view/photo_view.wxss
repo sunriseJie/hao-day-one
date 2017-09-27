@@ -1,0 +1,14 @@
+/* pages/view/photo_view.wxss */
+.viewDiaryPhotos{
+  z-index: 99;
+  height: 1200rpx;
+  background-color: #0f1324;
+}
+.viewDiaryPhotos swiper {
+  width: 100%;
+  height: 1200rpx;
+}
+.viewDiaryPhotos image{
+  width: 100%;
+  height: 1100rpx;
+}

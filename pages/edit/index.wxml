@@ -1,0 +1,78 @@
+<!--edit/index.wxml-->
+
+
+
+<view class="contailer">
+<view class="m-trip-detail">
+  <view class="bg_img">
+    <image class="cover" height="100%"  src="/images/bg.png" mode="top left"></image>
+  </view>
+  <view class="info-before"></view>
+  <view class="info">
+
+    <view>
+      <input value="{{title}}" type="text" bindfocus="ontTitleFocusHandle" bindblur="updateTitle" 
+      bindconfirm = "updateTitle" />
+      <view class="detail">
+        <view>
+          <textarea bindfocus="onContentFocusHandle" bindblur="updataContent"
+           bindconfirm='updataContent' value="{{content}}" maxlength="50" auto-height />
+        </view>
+      </view>
+    </view>
+
+    <view class="photo-container">
+
+      <view class="diary-detail-photo">
+        <block wx:for="{{ images }}">
+          <view class="one-photo-contailer">
+            
+              <image mode="aspectFill" src="{{item.path}}"></image>
+              <progress percent='{{item.percent}}' active />
+            
+          </view>
+
+        </block>
+        <image class="photo-add" bindtap="onSelectAndUploadPhoto" src="/images/add_image.jpg"></image>
+
+      </view>
+
+
+
+      <image class="diary-detail-hr" src="/images/hr.png"></image>
+      
+        <view class="diary-detail-video">
+          <block wx:for="{{ videos }}">
+            <video src="{{item.path}}"></video>
+            <progress percent='{{item.percent}}' active />
+          </block>
+          <view class="video-add-container">
+            <image class="video-add" bindtap="onSelectAndUploadVideo" src="/images/add_video.jpg" mode="aspectFit"></image>
+          </view>
+          
+        </view>
+      
+      
+
+
+      <view class="button_container">
+        <view class="img_month_c">
+          <picker bindchange='onMonthChange' value='{{month}}' range='{{months_arr}}'>
+            <image src='/images/month_{{month}}.png'></image>
+          </picker>
+          
+          <!-- <text class='month_text'>Month</text> -->
+          
+        </view>
+        
+        <button bindtap='createDiary' size="default" type="primary">提交</button>
+      </view>
+
+    </view>
+
+  </view>
+
+
+
+</view>
+</view>

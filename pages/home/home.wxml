@@ -1,0 +1,58 @@
+<!--home.wxml-->
+<!--template m-trip  -->
+<import src="../../components/trip/trip.wxml" />
+<!-- template m-trip-detail -->
+<import src="../../components/trip/trip_detail.wxml" />
+  
+
+
+
+     <view bindtap="clearPhotos" class="viewDiaryPhotos" wx:if="{{diaryPhotos}}">
+      <swiper indicator-dots="true" current="{{diaryPhotos.current}}" 
+      circular="false" indicator-color="#fffdf5" 
+      indicator-active-color="#d70b17">
+        <block wx:for="{{diaryPhotos.data}}" wx:for-item = "photo" wx:key="{{diaryPhotos.tripName}}">
+          <swiper-item>
+            <image src="{{photo}}" mode="aspectFit"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> 
+
+    <view class="viewDiaryPhotos" bindtap="hiddenVideo" wx:elif="{{showVideo}}">
+      <video class='video' src="{{showVideo}}" controls></video>
+    </view>
+  
+<view wx:else class="home">
+
+    <!--添加新内容按钮  -->
+     <button bindtap="onOpenEdit">添加新内容</button>   
+
+    
+        <view class="invite">
+             <image class="invite_img" src="/images/bg.png"></image>   
+        </view>
+
+        <view class="diary">
+          <scroll-view class="list" scroll-y="true">
+            <block wx:for="{{ trips }}" wx:for-item="trip" wx:key="trip.data[0].id">
+              <view wx:if="{{ trip.showDetail}}">
+                <template is="m-trip-detail" data="{{trip: trip.data, mode: 1}}" />
+              </view>
+              <view wx:else>
+                <template is="m-trip" data="{{trip: trip.data, mode: 1}}" />
+              </view>
+            </block>
+             <view wx-if="{{loadMore}}" class="loading">
+              正在加载...
+            </view> 
+            <view>
+             <!-- <button style='width:200rpx;' type="default" size="{{defaultSize}}" bindtap='loadMore'>刷新</button>  -->
+            </view>
+          </scroll-view>
+        </view>
+    
+
+
+
+</view>

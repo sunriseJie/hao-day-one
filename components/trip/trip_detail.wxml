@@ -1,0 +1,41 @@
+<template name="m-trip-detail">
+  <view class="m-trip-detail" wx:if="{{ mode === 1 || mode === 2 }}">              
+    <view class="bg_img">
+      <image class="cover" height="100%" width="750rpx" src="{{ trip.cover_image_w640 }}" mode="aspectFill"></image>
+    </view> 
+     <view class="info-before"></view> 
+    <view class="info">
+
+      <view bindtap="hiddenDiary" data-id="{{ trip.id }}">
+        <text class="h2">{{ trip.name }}</text>
+        <view class="detail">
+        <view><text>{{trip.content}}</text></view>
+        </view>
+      </view>
+
+      <view class="photo-container">
+        <block wx:for="{{ trip.photo }}" wx:for-item="photo"> 
+          <view class="diary-detail-photo">
+          <image src="{{photo}}" bindtap="viewDetailPhotos" 
+          data-current="{{index}}" data-id="{{trip.id}}"></image>
+          </view> 
+        </block>
+
+        <!--显示video  -->
+        <!-- <block wx:for="{{ trip.videos }}" wx:for-item="video">
+          <view style='height:225px;' wx:if="{{trip.videoLoading}}">
+            <image style='height:225rpx;vertical-align: middle;' src="/images/loading.gif"></image>
+          </view>
+          <view wx:else>
+            <video src='{{video.video.url}}' controls></video>
+          </view>
+        </block> -->
+
+      </view>
+
+    </view>
+
+
+
+  </view>
+</template>
